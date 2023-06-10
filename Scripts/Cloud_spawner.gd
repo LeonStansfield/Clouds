@@ -5,13 +5,24 @@ extends CSGBox3D
 
 var rng = RandomNumberGenerator.new()
 
+func _process(delta):
+	if Input.is_action_pressed("Spawn"):
+		for n in self.get_children():
+			self.remove_child(n)
+			n.queue_free()
+			
+		spawn_clouds()
+
 func _ready():
+	spawn_clouds()
+
+func spawn_clouds():
 	# Loop to spawn each cloud
-	while clouds_to_spawn >= 0:
-		clouds_to_spawn -= 1
+	var cloud_count : int = clouds_to_spawn
+	while cloud_count >= 0:
+		cloud_count -= 1
 		
 		# Pick random point in the box
-		
 		var x : float = rng.randf_range(size.x / 2, -size.x / 2)
 		var y : float = rng.randf_range(size.y / 2, -size.y / 2)
 		var z : float = rng.randf_range(size.z / 2, -size.z / 2)

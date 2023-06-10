@@ -1,4 +1,8 @@
-WorldEnvironment
+Timer
 Camera3D
 CSGBox3D
 GPUParticles3D
+AnimationPlayer
+Node3D
+AnimationTree
+WorldEnvironment
