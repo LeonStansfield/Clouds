@@ -1,0 +1,3 @@
+res://Scene.tscn
+res://Prefabs/Cloud.tscn
+res://Scripts/Cloud_spawner.gd

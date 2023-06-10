@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbs0w5gm6cfch"]
+
+[ext_resource type="Texture2D" uid="uid://dc3kwmw8m042i" path="res://Assets/FX_CloudAlpha04-bright.png" id="1_n40d0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kipaj"]
+emission_shape = 3
+emission_box_extents = Vector3(5, 3, 2)
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqkin"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_n40d0")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_lc1b3"]
+material = SubResource("StandardMaterial3D_lqkin")
+size = Vector2(5, 5)
+
+[node name="Cloud" type="GPUParticles3D"]
+visibility_range_end = 75.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+amount = 50
+lifetime = 30.0
+explosiveness = 0.98
+process_material = SubResource("ParticleProcessMaterial_kipaj")
+draw_pass_1 = SubResource("QuadMesh_lc1b3")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfabyucjt7c00"]
+
+[ext_resource type="Script" path="res://Scripts/Cloud_spawner.gd" id="1_3bcm0"]
+[ext_resource type="PackedScene" uid="uid://cbs0w5gm6cfch" path="res://Prefabs/Cloud.tscn" id="1_5ikex"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d7io"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tk751"]
+sky_top_color = Color(0.258824, 0.447059, 0.54902, 1)
+sky_horizon_color = Color(0.552941, 0.623529, 0.670588, 1)
+ground_bottom_color = Color(0.258824, 0.447059, 0.54902, 1)
+ground_horizon_color = Color(0.552941, 0.623529, 0.670588, 1)
+ground_curve = 0.0800004
+
+[sub_resource type="Sky" id="Sky_lukp6"]
+sky_material = SubResource("ProceduralSkyMaterial_tk751")
+
+[sub_resource type="Environment" id="Environment_m3ycs"]
+background_mode = 2
+sky = SubResource("Sky_lukp6")
+
+[node name="Scene" type="Node3D"]
+
+[node name="Cloud_spawner" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1d7io")
+size = Vector3(35, 15, 25)
+script = ExtResource("1_3bcm0")
+clouds_to_spawn = 3
+_cloud = ExtResource("1_5ikex")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+fov = 90.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m3ycs")
