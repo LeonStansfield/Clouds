@@ -48,7 +48,7 @@ _data = {
 
 [node name="Cloud_spawner" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_1d7io")
-size = Vector3(25, 20, 25)
+size = Vector3(25, 10, 25)
 script = ExtResource("1_3bcm0")
 clouds_to_spawn = 4
 _cloud = ExtResource("1_5ikex")
@@ -57,11 +57,11 @@ _cloud = ExtResource("1_5ikex")
 environment = SubResource("Environment_m3ycs")
 
 [node name="Camera_rig" type="Node3D" parent="."]
-transform = Transform3D(0.845521, 0, 0.533942, 0, 1, 0, -0.533942, 0, 0.845521, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera_rig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-fov = 90.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+fov = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_rig"]
 autoplay = "Camera"

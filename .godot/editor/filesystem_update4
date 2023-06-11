@@ -1,6 +1,2 @@
 res://Scene.tscn
 res://Prefabs/Cloud.tscn
-res://Scripts/Cloud_spawner.gd
-res://Cloud_spawner.gd
-res://Cloud.tscn
-res://Scene_2.tscn
