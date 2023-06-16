@@ -57,14 +57,13 @@ _cloud = ExtResource("1_5ikex")
 environment = SubResource("Environment_m3ycs")
 
 [node name="Camera_rig" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Camera_rig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
-fov = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_rig"]
 autoplay = "Camera"
 libraries = {
 "": SubResource("AnimationLibrary_qs3xa")
 }
+
+[node name="Camera3D" type="Camera3D" parent="Camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+fov = 50.0
